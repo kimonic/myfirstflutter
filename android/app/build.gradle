@@ -14,9 +14,11 @@ if (flutterRoot == null) {
 apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+//--------------------------打包正式版相关代码----------------------------------------------------
 def keystorePropertiesFile = rootProject.file("key.properties")
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+//--------------------------打包正式版相关代码----------------------------------------------------
 
 android {
     compileSdkVersion 27
@@ -34,7 +36,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
+//--------------------------打包正式版相关代码----------------------------------------------------
     signingConfigs {
         release {
             keyAlias keystoreProperties['keyAlias']
@@ -48,6 +50,7 @@ android {
             signingConfig signingConfigs.release
         }
     }
+//--------------------------打包正式版相关代码----------------------------------------------------
 
 
 }
