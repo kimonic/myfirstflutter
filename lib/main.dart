@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+/*
+ * [ERROR:flutter/shell/platform/android/android_context_gl.cc(165)]
+ * 出现模拟器运行即崩溃的时候,考虑重新安装模拟器(如果以前该迷你器运行正常的话)
+ *  或者换一个模拟器运行看一下效果,确定是模拟器的原因还是本身代码的问题
+ */
 
 void main() => runApp(new MyApp());
 
@@ -7,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Startup Name Generator',
+      title: 'Startup Name????? Generator',
       theme: new ThemeData(
         primaryColor: Colors.lightBlue,
       ),
@@ -61,8 +66,7 @@ class RandomWordsState extends State<RandomWords> {
             _suggestions.addAll(generateWordPairs().take(10));
           }
           return _buildRow(_suggestions[index]);
-        }
-    );
+        });
   }
 
   Widget _buildRow(WordPair pair) {
@@ -72,10 +76,11 @@ class RandomWordsState extends State<RandomWords> {
       title: new Text(
         pair.asPascalCase,
         style: _biggerFont,
-      ), trailing: new Icon(
-      alreadySaved ? Icons.favorite : Icons.favorite_border,
-      color: alreadySaved ? Colors.red : null,
-    ),
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
+      ),
       onTap: () {
         setState(() {
           if (alreadySaved) {
@@ -92,7 +97,7 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
 //    final wordPair = new WordPair.random();
 //    return new Text(wordPair.asPascalCase);
-    return new Scaffold (
+    return new Scaffold(
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
@@ -108,7 +113,7 @@ class RandomWordsState extends State<RandomWords> {
       new MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
-                (pair) {
+            (pair) {
               return new ListTile(
                 title: new Text(
                   pair.asPascalCase,
@@ -119,9 +124,9 @@ class RandomWordsState extends State<RandomWords> {
           );
           final divided = ListTile
               .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
+                context: context,
+                tiles: tiles,
+              )
               .toList();
           return new Scaffold(
             appBar: new AppBar(
@@ -134,7 +139,6 @@ class RandomWordsState extends State<RandomWords> {
     );
   }
 }
-
 
 //import 'package:flutter/material.dart';
 //
