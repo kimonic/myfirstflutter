@@ -1,6 +1,9 @@
 name: myfirstflutter
 description: A new Flutter application.
 
+#本页中使用 flutter commands 中的packages get 命令来获取本文件的修改内容
+#不要使用pub actions 中的命令
+
 dependencies:
   flutter:
     sdk: flutter

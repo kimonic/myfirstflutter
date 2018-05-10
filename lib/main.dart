@@ -4,6 +4,8 @@ import 'package:english_words/english_words.dart';
  * [ERROR:flutter/shell/platform/android/android_context_gl.cc(165)]
  * 出现模拟器运行即崩溃的时候,考虑重新安装模拟器(如果以前该迷你器运行正常的话)
  *  或者换一个模拟器运行看一下效果,确定是模拟器的原因还是本身代码的问题
+ *
+ *
  */
 
 void main() => runApp(new MyApp());
